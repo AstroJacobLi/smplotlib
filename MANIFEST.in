@@ -1,0 +1,1 @@
+include src/ttf/* src/test_data/* *.py *.png

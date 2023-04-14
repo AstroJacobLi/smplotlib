@@ -4,7 +4,13 @@ Matplotlib template for [SuperMongo (SM)](https://www.astro.princeton.edu/~rhl/s
 ## Installation
 
 ```bash
-python setup.py install
+pip install smplotlib
+```
+or 
+```bash
+git clone
+cd smplotlib
+pip install -e .
 ```
 
 ## Usage
