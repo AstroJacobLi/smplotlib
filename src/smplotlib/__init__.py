@@ -20,13 +20,13 @@ except DistributionNotFound:
     pass
 
 # Load font
+pkg_path = smplotlib.__path__[0]
 import matplotlib.font_manager as font_manager
-for font in font_manager.findSystemFonts('./'):
+for font in font_manager.findSystemFonts(pkg_path):
     font_manager.fontManager.addfont(font)
 assert 'Hershey' in font_manager.findfont('AVHershey Complex'), "Hershey font is not found"
 
 # Load style
-pkg_path = smplotlib.__path__[0]
 plt.style.use(os.path.join(pkg_path, 'smplot.mplstyle'))
 
 def set_style(usetex=False, fontsize=15, fontweight='normal', figsize=(6, 6), dpi=100):
@@ -92,3 +92,5 @@ def set_style(usetex=False, fontsize=15, fontweight='normal', figsize=(6, 6), dp
             })
             
 smplotlib.set_style()
+
+from .demo import demo_plot
