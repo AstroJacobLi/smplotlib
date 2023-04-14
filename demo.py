@@ -3,7 +3,7 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 import smplotlib
 
-data = np.load('./smplotlib/test_data/test_array.npy')
+data = np.load('./src/test_data/test_array.npy')
 Pr = data[0]
 Teqs = data[1]
 

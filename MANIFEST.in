@@ -1,1 +1,1 @@
-include src/ttf/* src/test_data/* *.py *.png
+include src/smplotlib/* *.py *.png *.npy
