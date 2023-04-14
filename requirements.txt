@@ -1,0 +1,3 @@
+numpy
+scipy
+matplotlib>=3.3.4
