@@ -108,27 +108,27 @@
 ## ***************************************************************************
 ## See https://matplotlib.org/api/artist_api.html#module-matplotlib.lines
 ## for more information on line properties.
-#lines.linewidth: 1.5               # line width in points
+lines.linewidth: 1.2               # line width in points
 #lines.linestyle: -                 # solid line
 lines.color:     black                # has no affect on plot(); see axes.prop_cycle
 #lines.marker:          None        # the default marker
 #lines.markerfacecolor: auto        # the default marker face color
 #lines.markeredgecolor: auto        # the default marker edge color
 #lines.markeredgewidth: 1.0         # the line width around the marker symbol
-#lines.markersize:      6           # marker size, in points
+lines.markersize:      8           # marker size, in points
 #lines.dash_joinstyle:  round       # {miter, round, bevel}
 #lines.dash_capstyle:   butt        # {butt, round, projecting}
 #lines.solid_joinstyle: round       # {miter, round, bevel}
 #lines.solid_capstyle:  projecting  # {butt, round, projecting}
-#lines.antialiased: True            # render lines in antialiased (no jaggies)
+lines.antialiased: True            # render lines in antialiased (no jaggies)
 
 ## The three standard dash patterns.  These are scaled by the linewidth.
 lines.dashed_pattern: 6.5, 3
-#lines.dashdot_pattern: 6.4, 1.6, 1, 1.6
+lines.dashdot_pattern: 6.5, 3, 2, 3
 lines.dotted_pattern: 2, 4
 #lines.scale_dashes: True
 
-#markers.fillstyle: full  # {full, left, right, bottom, top, none}
+markers.fillstyle: none  # {full, left, right, bottom, top, none}
 
 #pcolor.shading: auto
 #pcolormesh.snap: True  # Whether to snap the mesh to pixel boundaries. This is
@@ -404,7 +404,8 @@ axes.formatter.use_mathtext: True   # When True, use mathtext for scientific
 
 #axes.unicode_minus: True  # use Unicode for the minus symbol rather than hyphen.  See
                            # https://en.wikipedia.org/wiki/Plus_and_minus_signs#Character_codes
-#axes.prop_cycle: cycler('color', ['1f77b4', 'ff7f0e', '2ca02c', 'd62728', '9467bd', '8c564b', 'e377c2', '7f7f7f', 'bcbd22', '17becf'])
+axes.prop_cycle: cycler('color', ['k', 'e31c1c', '4200f7', '328b22', '71fcff', 'f100ff', '6bff42'])
+# r,g,b,c,m,lightgreen
                   # color cycle for plot lines as list of string color specs:
                   # single letter, long name, or web-style hex
                   # As opposed to all other parameters in this file, the color
@@ -584,7 +585,7 @@ figure.dpi:         100       # figure dots per inch
 ## ***************************************************************************
 #image.aspect:          equal        # {equal, auto} or a number
 image.interpolation:   none  # see help(imshow) for options
-image.cmap:            turbo      # A colormap name, gray etc...
+image.cmap:            jet      # A colormap name, gray etc...
 image.lut:             256          # the size of the colormap lookup table
 image.origin:          lower        # {lower, upper}
 #image.resample:        True
@@ -607,20 +608,20 @@ image.origin:          lower        # {lower, upper}
 ## ***************************************************************************
 ## * ERRORBAR PLOTS                                                          *
 ## ***************************************************************************
-errorbar.capsize: 3  # length of end cap on error bars in pixels
+errorbar.capsize: 2  # length of end cap on error bars in pixels
 
 
 ## ***************************************************************************
 ## * HISTOGRAM PLOTS                                                         *
 ## ***************************************************************************
-#hist.bins: 10  # The default number of histogram bins or 'auto'.
+hist.bins: 'auto'  # The default number of histogram bins or 'auto'.
 
 
 ## ***************************************************************************
 ## * SCATTER PLOTS                                                           *
 ## ***************************************************************************
 #scatter.marker: o         # The default marker type for scatter plots.
-scatter.edgecolors: black  # The default edge colors for scatter plots.
+#scatter.edgecolors: black  # The default edge colors for scatter plots.
 
 
 ## ***************************************************************************
@@ -674,7 +675,7 @@ savefig.bbox:      tight    # {tight, standard}
                                 # 'tight' is incompatible with pipe-based animation
                                 # backends (e.g. 'ffmpeg') but will work with those
                                 # based on temporary files (e.g. 'ffmpeg_file')
-#savefig.pad_inches:   0.1      # Padding to be used when bbox is set to 'tight'
+#savefig.pad_inches:   '0.1'      # Padding to be used when bbox is set to 'tight'
 #savefig.directory:    ~        # default directory in savefig dialog box,
                                 # leave empty to always use current working directory
 #savefig.transparent: False     # setting that controls whether figures are saved with a

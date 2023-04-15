@@ -29,7 +29,7 @@ assert 'Hershey' in font_manager.findfont('AVHershey Complex'), "Hershey font is
 # Load style
 plt.style.use(os.path.join(pkg_path, 'smplot.mplstyle'))
 
-def set_style(usetex=False, fontsize=15, fontweight='normal', figsize=(6, 6), dpi=100):
+def set_style(usetex=False, fontsize=15, fontweight='normal', figsize=(6, 6), dpi=120):
     '''
     Set matplotlib parameters for SuperMongo style.
     
