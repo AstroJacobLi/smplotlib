@@ -614,7 +614,7 @@ errorbar.capsize: 2  # length of end cap on error bars in pixels
 ## ***************************************************************************
 ## * HISTOGRAM PLOTS                                                         *
 ## ***************************************************************************
-hist.bins: 'auto'  # The default number of histogram bins or 'auto'.
+hist.bins: 15  # The default number of histogram bins or 'auto'.
 
 
 ## ***************************************************************************
