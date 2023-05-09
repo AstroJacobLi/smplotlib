@@ -1,5 +1,5 @@
 # smplotlib
-[![DOI](https://zenodo.org/badge/627675650.svg)](https://zenodo.org/badge/latestdoi/627675650)
+[![DOI](https://zenodo.org/badge/627675650.svg)](https://zenodo.org/badge/latestdoi/627675650) [![Downloads](https://static.pepy.tech/badge/smplotlib)](https://pepy.tech/project/smplotlib) [![PyPI version](https://badge.fury.io/py/smplotlib.svg)](https://badge.fury.io/py/smplotlib) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Matplotlib template for [SuperMongo (SM)](https://www.astro.princeton.edu/~rhl/sm/) style. Make your plots stylish and professional (and old-school) by one line of code.
 
