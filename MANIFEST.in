@@ -1,1 +1,1 @@
-include src/smplotlib/ttf/* src/smplotlib/test_data/* *.py *.png *.npy *.mplstyle
+include src/smplotlib/ttf/* src/smplotlib/test_data/* src/smplotlib/*.mplstyle *.py *.png *.npy
