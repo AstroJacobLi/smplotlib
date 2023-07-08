@@ -337,7 +337,7 @@ mathtext.fontset: custom   # Should be 'dejavusans' (default),
 ## "mathtext.fontset: custom" is defined by the mathtext.bf, .cal, .it, ...
 ## settings which map a TeX font name to a fontconfig font pattern.  (These
 ## settings are not used for other font sets.)
-mathtext.bf:  AVHershey Complex:heavy:italic # such that font_manager can find it
+mathtext.bf:  AVHershey Complex:heavy # such that font_manager can find it
 mathtext.cal: AVHershey Complex:medium
 mathtext.it:  AVHershey Complex:medium:italic
 mathtext.rm:  AVHershey Complex:medium
