@@ -70,12 +70,44 @@ def set_style(usetex=False, fontsize=15, fontweight='normal', figsize=(6, 6), dp
             "font.weight": "light",
             "axes.labelweight": "light",
             "mathtext.fontset": "custom",
-            "mathtext.bf": "AVHershey Complex:light",
+            "mathtext.bf": "AVHershey Complex:medium",
             "mathtext.cal": "AVHershey Complex:light",
-            "mathtext.it": "AVHershey Complex:light",
+            "mathtext.it": "AVHershey Complex:light:italic",
             "mathtext.rm": "AVHershey Complex:light",
-            "mathtext.sf": "AVHershey Complex:light",
+            "mathtext.sf": "AVHershey Duplex:light",
             "mathtext.tt": "AVHershey Complex:light",
+            "mathtext.fallback": "cm",
+            "mathtext.default": 'it'
+        })
+        if usetex is True:
+            rcParams.update({
+                "text.latex.preamble": '\n'.join([
+                    '\\usepackage{amsmath}'
+                    '\\usepackage[T1]{fontenc}',
+                    '\\usepackage{courier}',
+                    '\\usepackage[variablett]{lmodern}',
+                    '\\usepackage[LGRgreek]{mathastext}',
+                    '\\renewcommand{\\rmdefault}{\\ttdefault}'
+                ])
+            })
+    elif fontweight == 'heavy':
+        rcParams.update({
+            "axes.linewidth": 0.7,
+            "xtick.major.width": 0.6,
+            "xtick.minor.width": 0.5,
+            "ytick.major.width": 0.6,
+            "ytick.minor.width": 0.5,
+            "font.family":  "AVHershey Complex",
+            "font.weight": "heavy",
+            "font.style": "italic",
+            "axes.labelweight": "heavy",
+            "mathtext.fontset": "custom",
+            "mathtext.bf": "AVHershey Complex:heavy:italic",
+            "mathtext.cal": "AVHershey Complex:heavy:italic",
+            "mathtext.it": "AVHershey Simplex:heavy:italic",
+            "mathtext.rm": "AVHershey Complex:heavy:italic",
+            "mathtext.sf": "AVHershey Duplex:heavy",
+            "mathtext.tt": "AVHershey Simplex:heavy",
             "mathtext.fallback": "cm",
             "mathtext.default": 'it'
         })

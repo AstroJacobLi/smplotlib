@@ -128,7 +128,7 @@ lines.dashdot_pattern: 6.5, 3, 2, 3
 lines.dotted_pattern: 2, 4
 #lines.scale_dashes: True
 
-markers.fillstyle: none  # {full, left, right, bottom, top, none}
+markers.fillstyle: full  # {full, left, right, bottom, top, none}
 
 #pcolor.shading: auto
 #pcolormesh.snap: True  # Whether to snap the mesh to pixel boundaries. This is
@@ -261,11 +261,15 @@ font.weight:  normal
 font.stretch: normal
 font.size:    12.0
 
-font.serif:       Computer Modern Roman, Times New Roman, Times, DejaVu Serif, Bitstream Vera Serif, New Century Schoolbook, Century Schoolbook L, Utopia, ITC Bookman, Bookman, Nimbus Roman No9 L, Palatino, Charter, serif
-font.sans-serif:  Helvetica, Arial, DejaVu Sans, Bitstream Vera Sans, Computer Modern Sans Serif, Lucida Grande, Verdana, Geneva, Lucid, Avant Garde, sans-serif
+font.serif: AVHershey Complex 
+font.sans-serif: AVHershey Duplex 
+font.monospace: AVHershey Complex
+
+# font.serif:       Computer Modern Roman, Times New Roman, Times, DejaVu Serif, Bitstream Vera Serif, New Century Schoolbook, Century Schoolbook L, Utopia, ITC Bookman, Bookman, Nimbus Roman No9 L, Palatino, Charter, serif
+# font.sans-serif:  Helvetica, Arial, DejaVu Sans, Bitstream Vera Sans, Computer Modern Sans Serif, Lucida Grande, Verdana, Geneva, Lucid, Avant Garde, sans-serif
 #font.cursive:    Apple Chancery, Textile, Zapf Chancery, Sand, Script MT, Felipa, cursive
 #font.fantasy:    Comic Neue, Comic Sans MS, Chicago, Charcoal, ImpactWestern, Humor Sans, xkcd, fantasy
-font.monospace:   Terminal, Courier New, Courier, Computer Modern Typewriter, monospace, Bitstream Vera Sans Mono, Andale Mono, Terminal, Fixed, Nimbus Mono L, DejaVu Sans Mono, 
+# font.monospace:   Terminal, Courier New, Courier, Computer Modern Typewriter, monospace, Bitstream Vera Sans Mono, Andale Mono, Terminal, Fixed, Nimbus Mono L, DejaVu Sans Mono, 
 
 
 ## ***************************************************************************
@@ -333,12 +337,12 @@ mathtext.fontset: custom   # Should be 'dejavusans' (default),
 ## "mathtext.fontset: custom" is defined by the mathtext.bf, .cal, .it, ...
 ## settings which map a TeX font name to a fontconfig font pattern.  (These
 ## settings are not used for other font sets.)
-mathtext.bf:  AVHershey Complex:heavy
+mathtext.bf:  AVHershey Complex:heavy:italic # such that font_manager can find it
 mathtext.cal: AVHershey Complex:medium
-mathtext.it:  AVHershey Complex:mediumitalic
-mathtext.rm:  AVHershey Complex
-mathtext.sf:  AVHershey Complex
-mathtext.tt:  AVHershey Complex
+mathtext.it:  AVHershey Complex:medium:italic
+mathtext.rm:  AVHershey Complex:medium
+mathtext.sf:  AVHershey Duplex:medium
+mathtext.tt:  AVHershey Simplex:medium
 mathtext.fallback: cm  # Select fallback font from ['cm' (Computer Modern), 'stix'
                         # 'stixsans'] when a symbol can not be found in one of the
                         # custom math fonts. Select 'None' to not perform fallback
@@ -621,7 +625,7 @@ hist.bins: 15  # The default number of histogram bins or 'auto'.
 ## * SCATTER PLOTS                                                           *
 ## ***************************************************************************
 #scatter.marker: o         # The default marker type for scatter plots.
-#scatter.edgecolors: black  # The default edge colors for scatter plots.
+scatter.edgecolors: black  # The default edge colors for scatter plots.
 
 
 ## ***************************************************************************
