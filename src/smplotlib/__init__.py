@@ -29,7 +29,7 @@ assert 'Hershey' in font_manager.findfont('AVHershey Complex'), "Hershey font is
 # Load style
 plt.style.use(os.path.join(pkg_path, 'smplot.mplstyle'))
 
-def set_style(usetex=False, fontsize=15, fontweight='normal', figsize=(6, 6), dpi=120):
+def set_style(usetex=False, fontsize=15, fontweight='normal', figsize=(6, 6), dpi=120, edgecolor='black'):
     '''
     Set matplotlib parameters for SuperMongo style.
     
@@ -47,6 +47,8 @@ def set_style(usetex=False, fontsize=15, fontweight='normal', figsize=(6, 6), dp
         Figure size. Default is (6, 6).
     dpi : int, optional.
         Dots per inch. Default is 100.
+    edgecolor : str, optional.
+        Edge color. Default is 'black'. If you don't like the black edge, you can set it to 'face'.
     '''
     rcParams.update({'font.size': fontsize,
                      'figure.figsize': "{0}, {1}".format(figsize[0], figsize[1]),
@@ -57,7 +59,15 @@ def set_style(usetex=False, fontsize=15, fontweight='normal', figsize=(6, 6), dp
         rcParams.update({
             "font.weight": "normal",
             "axes.labelweight": "normal",
-            "mathtext.fontset": "custom"
+            "mathtext.fontset": "custom",
+            "mathtext.bf": "AVHershey Complex:medium",
+            "mathtext.cal": "AVHershey Complex:medium",
+            "mathtext.it": "AVHershey Complex:italic",
+            "mathtext.rm": "AVHershey Complex:medium",
+            "mathtext.sf": "AVHershey Duplex:medium",
+            "mathtext.tt": "AVHershey Complex:medium",
+            "mathtext.fallback": "cm",
+            "mathtext.default": 'it'
         })
         
     elif fontweight == 'light':
@@ -93,11 +103,6 @@ def set_style(usetex=False, fontsize=15, fontweight='normal', figsize=(6, 6), dp
     elif fontweight == 'heavy':
         rcParams.update({
             "axes.linewidth": 0.7,
-            "xtick.major.width": 0.6,
-            "xtick.minor.width": 0.5,
-            "ytick.major.width": 0.6,
-            "ytick.minor.width": 0.5,
-            "font.family":  "AVHershey Complex",
             "font.weight": "heavy",
             "axes.labelweight": "heavy",
             "mathtext.fontset": "custom",
@@ -122,6 +127,7 @@ def set_style(usetex=False, fontsize=15, fontweight='normal', figsize=(6, 6), dp
                 ])
             })
             
+    rcParams.update({'scatter.edgecolors': edgecolor})
 smplotlib.set_style()
 
 from .demo import demo_plot
