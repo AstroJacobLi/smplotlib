@@ -361,7 +361,7 @@ mathtext.default: it  # The default font to use for math.
 ## https://matplotlib.org/api/axes_api.html#module-matplotlib.axes
 #axes.facecolor:     white   # axes background color
 #axes.edgecolor:     black   # axes edge color
-axes.linewidth:     0.7     # edge line width
+axes.linewidth:      1.0     # edge line width
 #axes.grid:          False   # display grid or not
 #axes.grid.axis:     both    # which axis the grid should apply to
 axes.grid.which:    major   # grid lines at {major, minor, both} ticks
@@ -381,7 +381,7 @@ axes.labelweight:   normal  # weight of the x and y labels
                              #     - above patches but below lines ('line')
                              #     - above all (False)
 
-axes.formatter.limits:  -3, 3  # use scientific notation if log10
+axes.formatter.limits:  -4, 4  # use scientific notation if log10
                                # of the axis range is smaller than the
                                # first or larger than the second
 axes.formatter.use_locale: False   # When True, format tick labels
@@ -390,8 +390,8 @@ axes.formatter.use_locale: False   # When True, format tick labels
                                    # separator in the fr_FR locale.
 axes.formatter.use_mathtext: True   # When True, use mathtext for scientific
                                      # notation.
-#axes.formatter.min_exponent: 0  # minimum exponent to format in scientific notation
-#axes.formatter.useoffset: True  # If True, the tick label formatter
+axes.formatter.min_exponent: 4  # minimum exponent to format in scientific notation
+axes.formatter.useoffset: False  # If True, the tick label formatter
                                  # will default to labeling ticks relative
                                  # to an offset when the data range is
                                  # small compared to the minimum absolute
