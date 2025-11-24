@@ -21,7 +21,12 @@ import smplotlib
 ```
 Then just use `matplotlib.pyplot` as usual. For a quick start, you can use `smplotlib.demo_plot()` to generate a figure with the default settings. This figure is inspired by the two-phase ISM figure in Prof. Bruce Draine's [book](https://www.astro.princeton.edu/~draine/book/index.html), but the cooling curve doesn't correspond to the actual CR rates and ISRF.
 
-![example](two_phase.png)
+<p float="left">
+  <img src="two_phase.png" height="150px" />
+  <img src="demo_lf.png" height="150px" />
+  <img src="demo_cmb.png" height="150px" /> 
+</p>
+
 
 ### More advanced usage
 You can use the function ``smplotlib.set_style(fontweight='normal', usetex=False, fontsize=15, figsize=(6, 6), dpi=120)`` to customize the global seetings including font weight, font size, default figure size and resolution, and whether using LaTeX for math. The default font weight is ``'normal'``, and the default setting for LaTeX is ``False``. You can specify font weight as ``'light'`` or ``'heavy'``. Current support for LaTeX is not quite satisfying, so it is recommended to set ``usetex=False``.
