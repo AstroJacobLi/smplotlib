@@ -22,9 +22,9 @@ import smplotlib
 Then just use `matplotlib.pyplot` as usual. For a quick start, you can use `smplotlib.demo_plot()` to generate a figure with the default settings. This figure is inspired by the two-phase ISM figure in Prof. Bruce Draine's [book](https://www.astro.princeton.edu/~draine/book/index.html), but the cooling curve doesn't correspond to the actual CR rates and ISRF.
 
 <p float="left">
-  <img src="two_phase.png" height="150px" />
-  <img src="demo_lf.png" height="150px" />
-  <img src="demo_cmb.png" height="150px" /> 
+  <img src="two_phase.png" height="200px" />
+  <img src="demo_lf.png" height="200px" />
+  <img src="demo_cmb.png" height="200px" /> 
 </p>
 
 
