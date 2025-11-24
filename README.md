@@ -3,6 +3,8 @@
 
 Matplotlib template for [SuperMongo (SM)](https://www.astro.princeton.edu/~rhl/sm/) style. Make your plots stylish and professional (and old-school) by one line of code.
 
+**SuperMongo** is a plotting software that was widely used in astronomy. It is known for its distinctive, high-contrast, and "classy" look, featuring Hershey fonts and a specific color palette. This package aims to reproduce that nostalgic style using Matplotlib, bringing the "retro" look to your modern Python workflow.
+
 ## Installation
 
 ```bash
@@ -19,7 +21,11 @@ pip install -e . --user
 ```python
 import smplotlib
 ```
-Then just use `matplotlib.pyplot` as usual. For a quick start, you can use `smplotlib.demo_plot()` to generate a figure with the default settings. This figure is inspired by the two-phase ISM figure in Prof. Bruce Draine's [book](https://www.astro.princeton.edu/~draine/book/index.html), but the cooling curve doesn't correspond to the actual CR rates and ISRF.
+Then just use `matplotlib.pyplot` as usual. The package automatically applies the SuperMongo style, including the authentic color cycle (Standard X11 colors) and the classic `jet` colormap.
+
+For a quick start, you can use `smplotlib.demo_plot()` to generate a figure with the default settings. We also provide demo scripts in `src/smplotlib/demo.py` and `src/smplotlib/demo_astro.py` which generate the figures below.
+
+The left figure is inspired by the two-phase ISM figure in Prof. Bruce Draine's [book](https://www.astro.princeton.edu/~draine/book/index.html), but the cooling curve doesn't correspond to the actual CR rates and ISRF.
 
 <p float="left">
   <img src="two_phase.png" height="240px" />
