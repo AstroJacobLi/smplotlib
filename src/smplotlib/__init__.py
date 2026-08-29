@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
+import logging
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
@@ -8,6 +9,41 @@ import warnings
 from importlib.metadata import version, PackageNotFoundError
 warnings.simplefilter('ignore')
 import smplotlib
+
+
+def _mpl_version_ge(major, minor):
+    '''Return True if the installed Matplotlib is >= (major, minor).'''
+    try:
+        return tuple(mpl.__version_info__[:2]) >= (major, minor)
+    except AttributeError:  # matplotlib < 3.5 has no __version_info__
+        parts = mpl.__version__.split('.')
+        return (int(parts[0]), int(parts[1])) >= (major, minor)
+
+
+# Matplotlib 3.11 changed the meaning of ``mathtext.default``: the value that
+# keeps letters italic while leaving digits/punctuation upright (classic TeX
+# behaviour) is now ``'normal'``; the old ``'it'`` now forces *everything*,
+# including numbers, into the italic font. Pick the right one for this version.
+# See https://github.com/AstroJacobLi/smplotlib/issues (mathtext italic numbers).
+_MATHTEXT_DEFAULT = 'normal' if _mpl_version_ge(3, 11) else 'it'
+
+
+class _FontWeightWarningFilter(logging.Filter):
+    '''Silence the cosmetic "Failed to find font weight" message.
+
+    The bundled AVHershey fonts only ship Light/Medium/Heavy weights (200/500/
+    800), so Matplotlib 3.11+ logs a warning every time it maps the requested
+    ``normal``/``bold`` weight onto the nearest available one. The correct font
+    file is still selected; only the weight number differs, so the message is
+    noise. Genuine "font family not found" warnings are left untouched.
+    '''
+
+    def filter(self, record):
+        return not record.getMessage().startswith(
+            'findfont: Failed to find font weight')
+
+
+logging.getLogger('matplotlib.font_manager').addFilter(_FontWeightWarningFilter())
 
 __name__ = 'smplotlib'
 __author__ = ['Jiaxuan Li']
@@ -67,7 +103,7 @@ def set_style(usetex=False, fontsize=15, fontweight='normal', figsize=(6, 6), dp
             "mathtext.sf": "AVHershey Duplex:medium",
             "mathtext.tt": "AVHershey Complex:medium",
             "mathtext.fallback": "cm",
-            "mathtext.default": 'it'
+            "mathtext.default": _MATHTEXT_DEFAULT
         })
         
     elif fontweight == 'light':
@@ -87,7 +123,7 @@ def set_style(usetex=False, fontsize=15, fontweight='normal', figsize=(6, 6), dp
             "mathtext.sf": "AVHershey Duplex:light",
             "mathtext.tt": "AVHershey Complex:light",
             "mathtext.fallback": "cm",
-            "mathtext.default": 'it'
+            "mathtext.default": _MATHTEXT_DEFAULT
         })
         if usetex is True:
             rcParams.update({
@@ -113,7 +149,7 @@ def set_style(usetex=False, fontsize=15, fontweight='normal', figsize=(6, 6), dp
             "mathtext.sf": "AVHershey Duplex:heavy",
             "mathtext.tt": "AVHershey Simplex:heavy",
             "mathtext.fallback": "cm",
-            "mathtext.default": 'it'
+            "mathtext.default": _MATHTEXT_DEFAULT
         })
         if usetex is True:
             rcParams.update({
